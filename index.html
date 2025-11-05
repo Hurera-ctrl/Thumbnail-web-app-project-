@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple Thumbnail Maker</title>
+
+  <!-- Fonts for Latin and Arabic/Urdu -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Cairo:wght@400;700&family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="toolbar">
+      <h2>Tools</h2>
+
+      <label>Background
+        <input id="bg-color" type="color" value="#ffffff">
+      </label>
+
+      <label>Import images
+        <input id="image-upload" type="file" accept="image/*" multiple>
+      </label>
+
+      <div class="text-controls">
+        <input id="text-input" placeholder="Enter text">
+        <select id="font-select">
+          <option value="Inter">Inter</option>
+          <option value="Cairo">Cairo (Arabic)</option>
+          <option value="Noto Sans Arabic">Noto Sans Arabic</option>
+        </select>
+        <input id="font-size" type="number" value="48" min="8" max="300">
+        <input id="font-color" type="color" value="#000000">
+        <label class="small">
+          <input id="rtl-toggle" type="checkbox"> RTL
+        </label>
+        <label class="small">
+          <input id="shadow-toggle" type="checkbox"> Shadow
+        </label>
+        <button id="add-text">Add Text</button>
+      </div>
+
+      <div class="layer-controls">
+        <button id="bring-front">Bring Front</button>
+        <button id="send-back">Send Back</button>
+        <button id="delete-obj">Delete</button>
+      </div>
+
+      <div class="actions">
+        <button id="download">Download PNG</button>
+        <button id="clear">Clear</button>
+      </div>
+
+      <p class="hint">Drag images & text on canvas. Double-click text to edit. Resize using corner handle.</p>
+    </aside>
+
+    <main class="canvas-wrap">
+      <canvas id="canvas" width="1280" height="720"></canvas>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
